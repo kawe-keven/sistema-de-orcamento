@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function TemplatesPage() { return <main className="min-h-screen p-8 md:p-12"><div className="mx-auto max-w-6xl"><Link className="text-sm font-bold text-[#2f8d61]" href="/dashboard">← Início</Link><p className="mt-8 text-xs font-bold uppercase tracking-[.2em] text-[#2f8d61]">workspace / biblioteca</p><h1 className="mt-2 text-4xl font-bold">Modelos</h1><section className="card mt-8 p-8"><p className="text-[#738077]">Estruturas reutilizáveis serão carregadas do domínio de modelos.</p></section></div></main>; }

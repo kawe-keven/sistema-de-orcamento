@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root { color-scheme: light; --ink:#17221d; --muted:#738077; --line:#e5eae3; --paper:#fff; --canvas:#f6f8f4; --mint:#b9e8cf; --mint-deep:#2f8d61; --ease:cubic-bezier(.4,0,.2,1); }
+* { box-sizing:border-box; } body { margin:0; background:var(--canvas); color:var(--ink); font-family:ui-sans-serif,system-ui,sans-serif; } button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible { outline:3px solid rgba(47,141,97,.35); outline-offset:3px; }
+.card { border:1px solid var(--line); border-radius:10px; background:var(--paper); box-shadow:0 16px 40px rgba(24,43,31,.07); }

@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function ClientsPage() { return <main className="min-h-screen p-8 md:p-12"><div className="mx-auto max-w-6xl"><Link className="text-sm font-bold text-[#2f8d61]" href="/dashboard">← Início</Link><p className="mt-8 text-xs font-bold uppercase tracking-[.2em] text-[#2f8d61]">workspace / relacionamento</p><h1 className="mt-2 text-4xl font-bold">Clientes</h1><section className="card mt-8 p-8"><p className="text-[#738077]">Clientes, histórico e valores serão consultados pela API dedicada.</p></section></div></main>; }
