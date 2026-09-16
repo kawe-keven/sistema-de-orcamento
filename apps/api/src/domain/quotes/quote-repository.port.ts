@@ -1,0 +1,5 @@
+import { QuoteLine } from './quote.entity';
+export const QUOTE_REPOSITORY = Symbol('QUOTE_REPOSITORY');
+export type ClientRecord = { id: string; name: string; email: string };
+export type QuoteRecord = { id: string; client: ClientRecord; project: string; description: string; items: unknown; subtotal: unknown; discount: unknown; tax: unknown; total: unknown; status: string; publicTokenExpiresAt: Date | null };
+export interface QuoteRepository { upsertClient(name: string, email: string): Promise<ClientRecord>; create(input: { userId: string; clientId: string; project: string; description: string; items: QuoteLine[]; subtotal: number; discount: number; tax: number; total: number; publicTokenHash: string; publicTokenExpiresAt: Date }): Promise<QuoteRecord>; listByUser(userId: string): Promise<QuoteRecord[]>; findPublic(tokenHash: string, now: Date, consumed?: boolean): Promise<QuoteRecord | null>; updateResponse(id: string, status: 'APPROVED' | 'DECLINED', consumedAt: Date): Promise<QuoteRecord>; }

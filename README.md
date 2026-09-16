@@ -5,7 +5,7 @@ Monorepo para gestão de orçamentos com painel privado e portal público do cli
 ## Estrutura
 
 - `apps/web`: Next.js App Router, painel e `/quote/[token]`.
-- `apps/api`: Fastify modular, Prisma, JWT, links públicos e webhook de pagamento.
+- `apps/api`: NestJS modular, Clean Architecture, Prisma, JWT, links públicos e webhook de pagamento.
 - `packages/contracts`: contratos compartilhados.
 - `infra`: operação, backup e observabilidade.
 
@@ -27,7 +27,7 @@ API: `http://localhost:4000/api/health`
 
 O endpoint público é `http://localhost:3000/quote/<token>`. Tokens são aleatórios, expirados e armazenados apenas como hash no banco.
 
-O esqueleto do webhook Stripe está em `POST /webhooks/stripe`; antes de produção, conecte a verificação de assinatura, crie a sessão Checkout e implemente o envio SES/Resend do PDF. Essas integrações precisam de credenciais externas e não devem ser simuladas no ambiente local.
+O webhook Stripe validado está em `POST /api/webhooks/stripe`; a criação da sessão Checkout e o envio SES/Resend do PDF ainda precisam das credenciais externas e devem ser ativados por adapters de infraestrutura antes da produção.
 
 ## Segurança e produção
 
